@@ -1,0 +1,149 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Wikipedia Viewer</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+
+    html{
+        box-sizing: border-box;
+    }
+
+    body{
+    padding:0px;
+    margin:0px;
+        display:grid;
+        grid-template-areas:
+        'nav'
+        'hero'
+        ' search-area'
+        ' search-results'
+        ' footer'
+        ;
+      grid-gap: 10px;
+      background-color: #2196F3;
+      /* padding: 10px; */
+    }
+
+    /* @media (min-width: 500px) {
+  body {
+    display:grid;
+    grid-gap: 10px;
+      background-color: #2196F3;
+      padding: 10px;
+    grid-template-areas: 
+      "nav nav"
+      "hero hero"
+      "search-area search-results"
+      "footer footer";
+  } */
+
+    #hero{
+        background-color:orange;
+        background: url('hero.jpeg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+         -o-background-size: cover;
+        background-size: cover;
+        height:500px;
+        /* Image source: https://www.pexels.com/photo/calm-daylight-evening-grass-267967/ */
+        grid-area: hero;
+        text-align: center;
+    }
+
+    #search-area{
+        background-color:red;
+        grid-area: search-area;
+
+    }
+
+
+    #search-results{
+        background-color:blue;
+        grid-area: search-results;
+    }
+
+    footer{
+        background-color:greenyellow;
+        grid-area: footer;
+    }
+
+
+#nav{
+    grid-area: nav;
+    display:flex;
+    align-items: center;
+    padding:20px;  
+    width:50%;  
+}
+
+.logo{
+    background-color: rgb(230, 98, 98);
+    padding:15px;
+    width:25%;
+}
+
+.nav-element :hover{
+    border: 1px solid black;
+}
+
+.nav-item-1{
+    width:25%;
+    padding:15px;
+}
+.nav-item-2{
+    width:25%;
+    padding:15px;
+}
+.nav-item-3{
+    width:25%;
+    padding:15px;
+}
+
+
+    </style>    
+</head>
+
+<body>
+
+
+<div id='nav'>
+
+        <div class='logo'>Kajida</div>
+        <div class='nav-element nav-item-1'>Portfolio</div>
+        <div class='nav-element nav-item-2'>Social</div>
+        <div class='nav-element nav-item-3'>UserStories</div>
+        </ul>
+</div>
+
+
+<div id='hero'>
+       <h1>Find What You Are Looking For...</h1> 
+</div>
+
+
+
+<div id='search-area'>
+        <h1>search area</h1>
+</div>
+
+
+<div id='search-results'>
+        <h1>search results</h1>
+</div>
+
+
+        
+
+
+
+<footer>
+        <h1>Footer</h1>
+</footer>
+
+
+</body>
+</html>
