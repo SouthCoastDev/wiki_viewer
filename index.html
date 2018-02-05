@@ -1,34 +1,28 @@
-
 <!doctype html>
 <html>
+
 <head>
     <title>Wikipedia Viewer</title>
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <style type="text/css">
-
-    html{
-        box-sizing: border-box;
-    }
-
-    body{
-    padding:0px;
-    margin:0px;
-        display:grid;
-        grid-template-areas:
-        'nav'
-        'hero'
-        ' search-area'
-        ' search-results'
-        ' footer'
-        ;
-      grid-gap: 10px;
-      background-color: #2196F3;
-      /* padding: 10px; */
-    }
-
-    /* @media (min-width: 500px) {
+        html {
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 0px;
+            margin: 0px;
+            display: grid;
+            grid-template-areas: 'nav' 'hero' ' search-area' ' search-results' ' footer';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            /* padding: 10px; */
+        }
+        /* @media (min-width: 500px) {
   body {
     display:grid;
     grid-gap: 10px;
@@ -40,110 +34,140 @@
       "search-area search-results"
       "footer footer";
   } */
-
-    #hero{
-        background-color:orange;
-        background: url('hero.jpeg') no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-         -o-background-size: cover;
-        background-size: cover;
-        height:500px;
-        /* Image source: https://www.pexels.com/photo/calm-daylight-evening-grass-267967/ */
-        grid-area: hero;
-        text-align: center;
-    }
-
-    #search-area{
-        background-color:red;
-        grid-area: search-area;
-
-    }
-
-
-    #search-results{
-        background-color:blue;
-        grid-area: search-results;
-    }
-
-    footer{
-        background-color:greenyellow;
-        grid-area: footer;
-    }
-
-
-#nav{
-    grid-area: nav;
-    display:flex;
-    align-items: center;
-    padding:20px;  
-    width:50%;  
-}
-
-.logo{
-    background-color: rgb(230, 98, 98);
-    padding:15px;
-    width:25%;
-}
-
-.nav-element :hover{
-    border: 1px solid black;
-}
-
-.nav-item-1{
-    width:25%;
-    padding:15px;
-}
-.nav-item-2{
-    width:25%;
-    padding:15px;
-}
-.nav-item-3{
-    width:25%;
-    padding:15px;
-}
-
-
-    </style>    
+        
+        #hero {
+            background-color: orange;
+            background: url('hero.jpeg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 100vh;
+            /* Image source: https://www.pexels.com/photo/calm-daylight-evening-grass-267967/ */
+            grid-area: hero;
+            text-align: center;
+        }
+        
+        #search-area {
+            background-color: red;
+            grid-area: search-area;
+        }
+        
+        #search-results {
+            background-color: blue;
+            grid-area: search-results;
+            display: none;
+        }
+        
+        footer {
+            background-color: greenyellow;
+            grid-area: footer;
+        }
+        
+        #nav {
+            grid-area: nav;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            width: 50%;
+        }
+        
+        .logo {
+            padding: 15px;
+            width: 25%;
+        }
+        
+        .nav-element {
+            text-align: center;
+        }
+        
+        .nav-element:hover {
+            border-bottom: 4px solid black;
+            /* background-color: yellow; */
+            padding-top: 2px;
+        }
+        
+        .nav-item-1 {
+            width: 25%;
+            padding: 15px;
+        }
+        
+        .nav-item-2 {
+            width: 25%;
+            padding: 15px;
+        }
+        
+        .nav-item-3 {
+            width: 25%;
+            padding: 15px;
+        }
+        
+        .hero-title {
+            padding: 25%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        .hero-title:hover span {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
+    <div class='splash'>
+        <div id='nav'>
 
-<div id='nav'>
-
-        <div class='logo'>Kajida</div>
-        <div class='nav-element nav-item-1'>Portfolio</div>
-        <div class='nav-element nav-item-2'>Social</div>
-        <div class='nav-element nav-item-3'>UserStories</div>
-        </ul>
-</div>
-
-
-<div id='hero'>
-       <h1>Find What You Are Looking For...</h1> 
-</div>
+            <div class='logo'>Kajida</div>
+            <div class='nav-element nav-item-1'>Portfolio</div>
+            <div class='nav-element nav-item-2'>Social</div>
+            <div class='nav-element nav-item-3'>Stories</div>
+            </ul>
+        </div>
 
 
+        <div id='hero'>
+            <h1 class='hero-title'>Find What You Are Looking For...<span><i class="fas fa-arrow-circle-down"></i></span></h1>
+        </div>
+    </div>
 
-<div id='search-area'>
+
+    <div id='search-area'>
         <h1>search area</h1>
-</div>
+
+        <div class="form-group">
+            <input placeholder='Find Something....' class="input-control" />
+        </div>
+
+        <div class="form-group">
+            <button>Search</button>
+        </div>
+
+    </div>
 
 
-<div id='search-results'>
+    <div id='search-results'>
         <h1>search results</h1>
-</div>
+    </div>
 
 
-        
-
-
-
-<footer>
+    <footer>
         <h1>Footer</h1>
-</footer>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            // $('#search-results').hide();
+
+            $('#search-area').on('click', function() {
+                $('#search-results').css('display', 'block');
+            })
+
+
+        });
+    </script>
 
 
 </body>
+
 </html>
